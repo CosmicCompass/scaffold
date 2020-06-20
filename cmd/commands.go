@@ -37,9 +37,9 @@ var moduleCmd = &cobra.Command{
 
 // appCmd enables scaffolding of different levels of apps
 var appCmd = &cobra.Command{
-	Use:   "app [lvl] [user] [repo]",
+	Use:   "app [lvl] [user] [repo] [app-name]",
 	Short: "Generates an empty application boilerplate",
-	Args:  cobra.ExactArgs(3),
+	Args:  cobra.ExactArgs(4),
 	Run: func(cmd *cobra.Command, args []string) {
 		nameRaw := args[2]
 
@@ -47,10 +47,16 @@ var appCmd = &cobra.Command{
 		nameLowerCamelCase := strcase.ToLowerCamel(nameRaw)
 		nameLowerCase := strings.ToLower(nameRaw)
 
+		daemon := args[3] + "d"
+		client := args[3] + "cli"
+
 		ns := UserRepoArgs{
 			Dir:                  args[0],
 			User:                 args[1],
 			Repo:                 args[2],
+			Daemon:               daemon,
+			Client:               client,
+			AppName:              args[3],
 			NameRaw:              nameRaw,
 			NameCapitalCamelCase: nameCapitalCamelCase,
 			NameLowerCamelCase:   nameLowerCamelCase,

@@ -89,6 +89,11 @@ func uniqueStrings(s []string) []string {
 // Given a list of templates, create the mirror rendered template files
 // in the given output path. Should run createUniqueFolders first
 func applyTemplates(files []string, op string, args UserRepoArgs) error {
+	dir := os.Getenv("GOPATH")
+	if len(dir) < 1 {
+		return fmt.Errorf("GOPATH doesn't exist")
+	}
+
 	for _, f := range files {
 
 		replaced := replaceDir(f, args)

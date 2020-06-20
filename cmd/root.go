@@ -21,7 +21,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	homedir "github.com/mitchellh/go-homedir"
+	"github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
 )
 
@@ -41,6 +41,9 @@ type UserRepoArgs struct {
 	Dir                  string `json:"dir"`
 	User                 string `json:"user"`
 	Repo                 string `json:"repo"`
+	Daemon               string `json:"daemon"`
+	Client               string `json:"client"`
+	AppName              string `json:"app_name"`
 	NameRaw              string `json:"nameRaw"`
 	NameLowerCase        string `json:"nameLowerCase"`
 	NameCapitalCamelCase string `json:"nameCapitalCamelCase"`

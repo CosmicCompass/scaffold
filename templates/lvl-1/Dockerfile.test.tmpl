@@ -1,0 +1,10 @@
+FROM alpine:3.11
+RUN apk add -U --no-cache ca-certificates
+
+WORKDIR /root
+COPY ./bin/{{ .Daemon}} /usr/bin/{{ .Daemon}}
+COPY ./bin/{{ .Client }} /usr/bin/{{ .Client }}
+COPY  entry-point.sh .
+EXPOSE 26657
+
+ENTRYPOINT [ "sh", "entry-point.sh" ]
