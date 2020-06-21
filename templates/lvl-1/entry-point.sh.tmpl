@@ -35,5 +35,5 @@ sed -i 's/timeout_commit = "5s"/timeout_commit = "1s"/g' ~/.{{ .Daemon }}/config
 sed -i 's/timeout_propose = "3s"/timeout_propose = "1s"/g' ~/.{{ .Daemon }}/config/config.toml
 sed -i 's/index_all_keys = false/index_all_keys = true/g' ~/.{{ .Daemon }}/config/config.toml
 
-# Start the stake
-{{ .Daemon }} start --pruning=nothing
+# Start the chain
+# {{ .Daemon }} start --pruning=nothing

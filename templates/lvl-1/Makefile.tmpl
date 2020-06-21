@@ -19,8 +19,8 @@ build:
 
 # TODO : Think a diffrent way to install
 install: go.sum
-		go build -mod=readonly $(BUILD_FLAGS) -o $${GOBIN-$${GOPATH-$$HOME/go}/bin}/{{.Daemon}} ./cmd/appd
-		go build -mod=readonly $(BUILD_FLAGS) -o $${GOBIN-$${GOPATH-$$HOME/go}/bin}/{{.Client}} ./cmd/appcli
+		go build -mod=mod $(BUILD_FLAGS) -o $${GOBIN-$${GOPATH-$$HOME/go}/bin}/{{.Daemon}} ./cmd/appd
+		go build -mod=mod $(BUILD_FLAGS) -o $${GOBIN-$${GOPATH-$$HOME/go}/bin}/{{.Client}} ./cmd/appcli
 
 go.sum: go.mod
 		@echo "--> Ensure dependencies have not been modified"

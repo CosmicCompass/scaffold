@@ -1,4 +1,4 @@
-module github.com/cosmos/scaffold
+module github.com/saisunkari19/scaffold
 
 go 1.13
 
