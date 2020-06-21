@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "github.com/saisunkari19/scaffold/cmd"
+import "github.com/CosmicCompass/scaffold/cmd"
 
 func main() {
 	cmd.Execute()
