@@ -26,6 +26,7 @@ import (
 	"github.com/tendermint/tendermint/libs/cli"
 
 	"github.com/{{ .User }}/{{ .Repo }}/app"
+	internal "github.com/{{ .User }}/{{ .Repo }}/types"
 )
 
 var (
@@ -42,9 +43,9 @@ func main() {
 
 	// Read in the configuration file for the sdk
 	config := sdk.GetConfig()
-	config.SetBech32PrefixForAccount(sdk.Bech32PrefixAccAddr, sdk.Bech32PrefixAccPub)
-	config.SetBech32PrefixForValidator(sdk.Bech32PrefixValAddr, sdk.Bech32PrefixValPub)
-	config.SetBech32PrefixForConsensusNode(sdk.Bech32PrefixConsAddr, sdk.Bech32PrefixConsPub)
+	config.SetBech32PrefixForAccount(internal.Bech32PrefixAccAddr, internal.Bech32PrefixAccPub)
+	config.SetBech32PrefixForValidator(internal.Bech32PrefixValAddr, internal.Bech32PrefixValPub)
+	config.SetBech32PrefixForConsensusNode(internal.Bech32PrefixConsAddr, internal.Bech32PrefixConsPub)
 	config.Seal()
 
 	// TODO: setup keybase, viper object, etc. to be passed into

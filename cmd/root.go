@@ -44,6 +44,7 @@ type UserRepoArgs struct {
 	Daemon               string `json:"daemon"`
 	Client               string `json:"client"`
 	AppName              string `json:"app_name"`
+	AccountPrefix        string `json:"account_prefix"`
 	NameRaw              string `json:"nameRaw"`
 	NameLowerCase        string `json:"nameLowerCase"`
 	NameCapitalCamelCase string `json:"nameCapitalCamelCase"`
